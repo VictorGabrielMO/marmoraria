@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/style.css" />
+    <title> orcamento </title>
+</head>
+
+<body>
+    <nav>
+        <ul id="navbar-options-list">
+            <hr>
+            <li><a href="." class="clickable-box">Orçamento</a></li>
+            <hr>
+            <li><a href="news.asp" class="clickable-box">Agenda</a></li>
+            <hr>
+            <li><a href="contact.asp" class="clickable-box">Historico de vendas</a></li>
+            <hr>
+            <li><a href="about.asp" class="clickable-box">Configurações</a></li>
+            <hr>
+        </ul>
+    </nav>
+
+    <div class="work-interface">
+        <button id="addButton">Adicionar um item</button>
+    </div>
+</body>
+
+<script>
+    var addBtn = document.getElementById("addButton");
+    var inputItemDiv = document.createElement('div');
+
+    addBtn.addEventListener('click', () => {
+        var workInterface = document.querySelector('.work-interface');
+
+        var itemKind = document.createElement('select');
+        itemKind.value = "default";
+
+        const itemOptionDefault = document.createElement('option');
+        itemOptionDefault.value = 'default';
+        itemOptionDefault.innerText = "Selecione uma opção";
+        itemKind.appendChild(itemOptionDefault);
+        
+        const itemOptionPia = document.createElement('option');
+        itemOptionPia.value = 'pia';
+        itemOptionPia.innerText = "Pia";
+        itemKind.appendChild(itemOptionPia);
+
+        const itemOptionSoleira = document.createElement('option');
+        itemOptionSoleira.value = 'soleira';
+        itemOptionSoleira.innerText = "Soleira";
+        itemKind.appendChild(itemOptionSoleira);
+        
+        inputItemDiv.appendChild(itemKind);
+        workInterface.appendChild(inputItemDiv);
+
+        if(itemKind == 'soleira'){
+            var soleiraForm = document.createElement('form');
+            
+        }
+    });
+
+
+
+</script>
+
+
+</html>
